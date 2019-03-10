@@ -1,49 +1,122 @@
 package e.rkkee.easypark;
 
+
+import android.app.ProgressDialog;
+
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
-    TextView fgt,nwt;
-    EditText use,pse;
-    Button lg;
+
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+
+    private Button buttonRegister;
+    private EditText editTextEmail;
+    private EditText editTextPassword;
+    private TextView textViewSignin;
+    private ProgressDialog progressDialog;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        mAuth = FirebaseAuth.getInstance();
 
-        fgt = findViewById(R.id.fg);
-        nwt = findViewById(R.id.nw);
-        use = findViewById(R.id.us);
-        pse = findViewById(R.id.pas);
-        lg = findViewById(R.id.log);
+        //if getCurrentUser does not returns null
+        if(mAuth.getCurrentUser() != null){
+            //that means user is already logged in
+            //so close this activity
+            finish();
 
+            //and open profile activity
+            startActivity(new Intent(getApplicationContext(), Profile.class));
+        }
 
+        //initializing views
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        textViewSignin = findViewById(R.id.textViewSignin);
 
-        lg.setOnClickListener(new View.OnClickListener() {
+        buttonRegister = findViewById(R.id.buttonRegister);
 
-            @Override
-            public void onClick(View view) {
-                if (use.getText().toString().equals("admin") && pse.getText().toString().equals("1234")) {
-                    Intent intent = new Intent(MainActivity.this, firstpg.class);
-                    startActivity(intent);
-                    Toast.makeText(MainActivity.this, "login successful", Toast.LENGTH_SHORT).show();
+        progressDialog = new ProgressDialog(this);
 
-                } else {
+        //attaching listener to button
+        buttonRegister.setOnClickListener(this);
+        textViewSignin.setOnClickListener(this);
 
-                    Toast.makeText(MainActivity.this, "login unsuccessful", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+    }
 
+    private void registerUser(){
+
+        //getting email and password from edit texts
+        String email = editTextEmail.getText().toString().trim();
+        String password  = editTextPassword.getText().toString().trim();
+
+        //checking if email and passwords are empty
+        if(TextUtils.isEmpty(email)){
+            Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if(TextUtils.isEmpty(password)){
+            Toast.makeText(this,"Please enter password",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        //if the email and password are not empty
+        //displaying a progress dialog
+
+        progressDialog.setMessage("Registering Please Wait...");
+        progressDialog.show();
+
+        //creating a new user
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        //checking if success
+                        if(task.isSuccessful()){
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), Profile.class));
+                        }else{
+                            //display some message here
+                            Toast.makeText(MainActivity.this,"Registration Error",Toast.LENGTH_LONG).show();
+                        }
+                        progressDialog.dismiss();
+                    }
+                });
+
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        if(view == buttonRegister){
+            registerUser();
+        }
+
+        if(view == textViewSignin){
+            //open login activity when user taps on the already registered textview
+            startActivity(new Intent(this, Profile.class));
+        }
 
     }
 }

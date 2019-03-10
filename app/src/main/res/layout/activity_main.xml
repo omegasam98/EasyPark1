@@ -1,64 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="76dp"
-        android:layout_y="219dp"
-        android:text="User Name" />
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="77dp"
-        android:layout_y="273dp"
-        android:text="password" />
+        <EditText
+            android:layout_margin="16dp"
+            android:inputType="textEmailAddress"
+            android:hint="Enter your email"
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <EditText
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
-        android:layout_x="162dp"
-        android:layout_y="205dp"
-        android:id="@+id/us"
-        android:inputType="textEmailAddress" />
+        <EditText
+            android:layout_margin="16dp"
+            android:inputType="textPassword"
+            android:hint="Enter your password"
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <EditText
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
-        android:layout_x="162dp"
-        android:id="@+id/pas"
-        android:layout_y="267dp"
-        android:inputType="textPassword" />
+        <Button
+            android:layout_margin="16dp"
+            android:id="@+id/buttonRegister"
+            android:text="Register User"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="157dp"
-        android:id="@+id/log"
-        android:layout_y="362dp"
-        android:text="Login" />
+        <TextView
+            android:textAlignment="center"
+            android:text="Already Registered? Sign In here"
+            android:id="@+id/textViewSignin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="134dp"
-        android:layout_y="481dp"
-        android:text="Forgot password?"
-        android:id="@+id/fg"/>
+    </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="259dp"
-        android:layout_y="481dp"
-        android:text="New User?"
-        android:id="@+id/nw"/>
-
-
-</AbsoluteLayout>
+</RelativeLayout>
