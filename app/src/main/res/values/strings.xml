@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">EasyPark</string>
-    <String name="username">User Name</String>
-    <string name="password">Password</string>
+
 </resources>

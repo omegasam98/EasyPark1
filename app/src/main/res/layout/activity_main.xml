@@ -18,26 +18,29 @@
         android:layout_height="wrap_content"
         android:layout_x="77dp"
         android:layout_y="273dp"
-        android:text="@string/password" />
+        android:text="password" />
 
     <EditText
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_x="162dp"
         android:layout_y="205dp"
-        android:inputType="textEmailAddress"/>
+        android:id="@+id/us"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_x="162dp"
+        android:id="@+id/pas"
         android:layout_y="267dp"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="157dp"
+        android:id="@+id/log"
         android:layout_y="362dp"
         android:text="Login" />
 
@@ -46,14 +49,16 @@
         android:layout_height="wrap_content"
         android:layout_x="134dp"
         android:layout_y="481dp"
-        android:text="Forgot password?" />
+        android:text="Forgot password?"
+        android:id="@+id/fg"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="259dp"
         android:layout_y="481dp"
-        android:text="New User?" />
+        android:text="New User?"
+        android:id="@+id/nw"/>
 
 
 </AbsoluteLayout>
