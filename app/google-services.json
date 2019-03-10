@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "859762840668",
+    "firebase_url": "https://easy-park-c8d03.firebaseio.com",
+    "project_id": "easy-park-c8d03",
+    "storage_bucket": "easy-park-c8d03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859762840668:android:75fb78a3751818f1",
+        "android_client_info": {
+          "package_name": "e.rkkee.easypark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "859762840668-jr0g3s2m8r68cmj7tae1fhiaensb2ghd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "e.rkkee.easypark",
+            "certificate_hash": "e875a4094dc6b1d510f519abe1f81b217116dd88"
+          }
+        },
+        {
+          "client_id": "859762840668-thntui4lu22hpc931o1kk2n9ruskasbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9ztzaD1SS8WMJcI38UtazRYqSjgyZdCg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "859762840668-thntui4lu22hpc931o1kk2n9ruskasbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
