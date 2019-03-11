@@ -1,52 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:orientation="vertical"
+    <EditText
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="9dp"
+        android:hint="Enter your email"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
 
-        <EditText
-            android:layout_margin="16dp"
-            android:inputType="textEmailAddress"
-            android:hint="Enter your email"
-            android:id="@+id/editTextEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
-        <EditText
-            android:layout_margin="16dp"
-            android:inputType="textPassword"
-            android:hint="Enter your password"
-            android:id="@+id/editTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/editTextUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="76dp"
+        android:hint="Enter your username"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="77dp" />
 
-        <Button
-            android:layout_margin="16dp"
-            android:id="@+id/buttonRegister"
-            android:text="Register User"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/editTextFname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="150dp"
+        android:hint="Enter your First Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="163dp" />
 
-        <TextView
-            android:textAlignment="center"
-            android:text="Already Registered? Sign In here"
-            android:id="@+id/textViewSignin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/editTextLname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="222dp"
+        android:hint="Enter your Last Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="228dp" />
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/editTextContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="290dp"
+        android:hint="Enter your Contact Number"
+        android:inputType="number|phone"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="297dp" />
 
-</RelativeLayout>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="433dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_x="0dp"
+        android:layout_y="362dp"
+        android:hint="Enter your password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="363dp" />
+
+    <EditText
+        android:id="@+id/editTextCPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_x="0dp"
+        android:layout_y="421dp"
+        android:hint="Re-enter Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="428dp" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="501dp"
+        android:text="Register User"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.873" />
+
+    <TextView
+        android:id="@+id/textViewSignin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_x="94dp"
+        android:layout_y="568dp"
+        android:text="Already Registered? Sign In here"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</AbsoluteLayout>
